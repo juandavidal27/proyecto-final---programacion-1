@@ -1,0 +1,74 @@
+# ==========================================
+# PARTE 4 - CLASE BIBLIOTECA
+# ==========================================
+
+from biblioteca import Libro
+
+
+class Biblioteca:
+
+    # Constructor
+    def __init__(self, nombre):
+
+        self.nombre = nombre
+
+        # Listas
+        self.libros = []
+        self.usuarios = []
+
+    # Método agregar libro
+    def agregarLibro(self, libro):
+
+        self.libros.append(libro)
+
+        print("✅ Libro agregado correctamente.")
+
+    # Método registrar usuario
+    def registrarUsuario(self, usuario):
+
+        self.usuarios.append(usuario)
+
+        print("✅ Usuario registrado correctamente.")
+
+    # Mostrar libros
+    def mostrarLibros(self):
+
+        print("\n========== LIBROS ==========")
+
+        for libro in self.libros:
+
+            libro.mostrarInformacion()
+
+    # Mostrar usuarios
+    def mostrarUsuarios(self):
+
+        print("\n========== USUARIOS ==========")
+
+        for usuario in self.usuarios:
+
+            usuario.mostrarUsuarioHerencia()
+
+
+# ==========================================
+# OBJETO BIBLIOTECA
+# ==========================================
+
+biblioteca = Biblioteca("Biblioteca Central")
+
+# ==========================================
+# AGREGAR LIBROS
+# ==========================================
+
+biblioteca.agregarLibro(Libro)
+biblioteca.agregarLibro(Libro)
+biblioteca.agregarLibro(Libro)
+
+biblioteca.registrarUsuario(usuario1)
+biblioteca.registrarUsuario(usuario2)
+
+# ==========================================
+# MOSTRAR INFORMACIÓN
+# ==========================================
+
+biblioteca.mostrarLibros()
+biblioteca.mostrarUsuarios()

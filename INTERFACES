@@ -1,0 +1,73 @@
+# ==========================================
+# PARTE 7 - INTERFACES
+# ==========================================
+
+# =========================
+# INTERFAZ PRESTABLE
+# =========================
+
+from abc import ABC, abstractmethod
+
+
+class Prestable(ABC):
+
+    @abstractmethod
+    def prestar(self):
+        pass
+
+
+# =========================
+# CLASE LIBRO PRESTADO
+# =========================
+
+class LibroPrestado(Prestable):
+
+    # Constructor
+    def __init__(self, titulo):
+
+        self.titulo = titulo
+
+    # Implementación del método
+    def prestar(self):
+
+        print("📚 El libro", self.titulo,
+              "ha sido prestado correctamente.")
+
+
+# =========================
+# CLASE REVISTA
+# =========================
+
+class Revista(Prestable):
+
+    # Constructor
+    def __init__(self, nombre):
+
+        self.nombre = nombre
+
+    # Implementación del método
+    def prestar(self):
+
+        print("📰 La revista", self.nombre,
+              "ha sido prestada correctamente.")
+
+
+# ==========================================
+# OBJETOS INTERFAZ
+# ==========================================
+
+prestamo1 = LibroPrestado("Cien años de soledad")
+prestamo2 = Revista("National Geographic")
+
+# Lista de objetos
+prestables = [prestamo1, prestamo2]
+
+# ==========================================
+# MOSTRAR PRÉSTAMOS
+# ==========================================
+
+print("\n========== SISTEMA DE PRÉSTAMOS ==========")
+
+for objeto in prestables:
+
+    objeto.prestar()

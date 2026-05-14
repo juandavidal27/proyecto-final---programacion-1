@@ -1,0 +1,45 @@
+# ==========================================
+# PARTE 5 - POLIMORFISMO
+# ==========================================
+
+# =========================
+# CLASE USUARIO POLIMORFISMO
+# =========================
+
+class UsuarioPolimorfismo:
+
+    def realizarAccion(self):
+
+        print("📚 El usuario está solicitando un libro.")
+
+
+# =========================
+# CLASE ADMIN POLIMORFISMO
+# =========================
+
+class AdminPolimorfismo:
+
+    def realizarAccion(self):
+
+        print("🏛️ El administrador está organizando la biblioteca.")
+
+
+# ==========================================
+# OBJETOS POLIMORFISMO
+# ==========================================
+
+usuarioP = UsuarioPolimorfismo()
+adminP = AdminPolimorfismo()
+
+# Lista de objetos
+personas = [usuarioP, adminP]
+
+# ==========================================
+# POLIMORFISMO EN ACCIÓN
+# ==========================================
+
+print("\n========== POLIMORFISMO ==========")
+
+for persona in personas:
+
+    persona.realizarAccion()

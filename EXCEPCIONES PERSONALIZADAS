@@ -1,0 +1,69 @@
+# ==========================================
+# PARTE 8 - EXCEPCIONES PERSONALIZADAS
+# ==========================================
+
+# =========================
+# EXCEPCIÓN PERSONALIZADA
+# =========================
+
+class LibroNoDisponibleException(Exception):
+    pass
+
+
+# =========================
+# CLASE LIBRO BIBLIOTECA
+# =========================
+
+class LibroBiblioteca:
+
+    # Constructor
+    def __init__(self, titulo):
+
+        self.titulo = titulo
+        self.disponible = True
+
+    # Método prestar libro
+    def prestarLibro(self):
+
+        # Validación
+        if self.disponible == False:
+
+            raise LibroNoDisponibleException(
+                "⚠️ El libro ya se encuentra prestado."
+            )
+
+        self.disponible = False
+
+        print("✅ Libro prestado correctamente.")
+
+    # Método devolver libro
+    def devolverLibro(self):
+
+        self.disponible = True
+
+        print("✅ Libro devuelto correctamente.")
+
+
+# ==========================================
+# OBJETO LIBRO
+# ==========================================
+
+libroPrestamo = LibroBiblioteca("El Principito")
+
+# ==========================================
+# MANEJO DE EXCEPCIONES
+# ==========================================
+
+print("\n========== EXCEPCIONES ==========")
+
+try:
+
+    # Primer préstamo
+    libroPrestamo.prestarLibro()
+
+    # Segundo préstamo (genera error)
+    libroPrestamo.prestarLibro()
+
+except LibroNoDisponibleException as error:
+
+    print(error)

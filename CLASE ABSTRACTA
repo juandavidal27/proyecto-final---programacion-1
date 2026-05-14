@@ -1,0 +1,65 @@
+# ==========================================
+# PARTE 6 - CLASE ABSTRACTA
+# ==========================================
+
+# =========================
+# CLASE ABSTRACTA
+# =========================
+
+from abc import ABC, abstractmethod
+
+
+class MaterialBiblioteca(ABC):
+
+    # Constructor
+    def __init__(self, titulo):
+
+        self.titulo = titulo
+
+    # Método abstracto
+    @abstractmethod
+    def tipoMaterial(self):
+        pass
+
+
+# =========================
+# CLASE LIBRO FÍSICO
+# =========================
+
+class LibroFisico(MaterialBiblioteca):
+
+    def tipoMaterial(self):
+
+        print(self.titulo, "es un libro físico 📕")
+
+
+# =========================
+# CLASE LIBRO DIGITAL
+# =========================
+
+class LibroDigital(MaterialBiblioteca):
+
+    def tipoMaterial(self):
+
+        print(self.titulo, "es un libro digital 💻")
+
+
+# ==========================================
+# OBJETOS ABSTRACTOS
+# ==========================================
+
+material1 = LibroFisico("Harry Potter")
+material2 = LibroDigital("Python para principiantes")
+
+# Lista de materiales
+materiales = [material1, material2]
+
+# ==========================================
+# MOSTRAR MATERIALES
+# ==========================================
+
+print("\n========== MATERIALES ==========")
+
+for material in materiales:
+
+    material.tipoMaterial()

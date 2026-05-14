@@ -1,0 +1,53 @@
+# ==========================================
+# PARTE 2 - ENCAPSULAMIENTO Y USUARIO
+# ==========================================
+
+class Usuario:
+
+    # Constructor
+    def __init__(self, nombre, identificacion):
+
+        # Atributos privados
+        self.__nombre = nombre
+        self.__identificacion = identificacion
+
+    # Getter nombre
+    def getNombre(self):
+        return self.__nombre
+
+    # Setter nombre
+    def setNombre(self, nuevo_nombre):
+        self.__nombre = nuevo_nombre
+
+    # Getter identificación
+    def getIdentificacion(self):
+        return self.__identificacion
+
+    # Setter identificación
+    def setIdentificacion(self, nueva_identificacion):
+        self.__identificacion = nueva_identificacion
+
+    # Método mostrar usuario
+    def mostrarUsuario(self):
+
+        print("Nombre:", self.__nombre)
+        print("Identificación:", self.__identificacion)
+        print("------------------------")
+
+
+# ==========================================
+# OBJETOS USUARIO
+# ==========================================
+
+usuario1 = Usuario("Juan David", "1001")
+usuario2 = Usuario("María", "1002")
+
+# Mostrar usuarios
+usuario1.mostrarUsuario(1)
+usuario2.mostrarUsuario(2)
+
+# Modificar nombre
+usuario1.setNombre("Carlos")
+
+print("Nombre actualizado:")
+print(usuario1.getNombre())

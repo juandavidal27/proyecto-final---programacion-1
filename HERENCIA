@@ -1,0 +1,95 @@
+# ==========================================
+# PARTE 3 - HERENCIA
+# ==========================================
+
+# =========================
+# CLASE PADRE
+# =========================
+
+class Persona:
+
+    # Constructor
+    def __init__(self, nombre, identificacion):
+
+        self.nombre = nombre
+        self.identificacion = identificacion
+
+    # Método mostrar persona
+    def mostrarPersona(self):
+
+        print("Nombre:", self.nombre)
+        print("Identificación:", self.identificacion)
+
+
+# =========================
+# CLASE HIJA USUARIO
+# =========================
+
+class UsuarioHerencia(Persona):
+
+    # Constructor
+    def __init__(self, nombre, identificacion, carrera):
+
+        # Herencia
+        super().__init__(nombre, identificacion)
+
+        self.carrera = carrera
+
+    # Método mostrar usuario
+    def mostrarUsuarioHerencia(self):
+
+        self.mostrarPersona()
+
+        print("Carrera:", self.carrera)
+        print("------------------------")
+
+
+# =========================
+# CLASE HIJA ADMINISTRADOR
+# =========================
+
+class Administrador(Persona):
+
+    # Constructor
+    def __init__(self, nombre, identificacion, cargo):
+
+        super().__init__(nombre, identificacion)
+
+        self.cargo = cargo
+
+    # Método mostrar administrador
+    def mostrarAdministrador(self):
+
+        self.mostrarPersona()
+
+        print("Cargo:", self.cargo)
+        print("------------------------")
+
+
+# ==========================================
+# OBJETOS HERENCIA
+# ==========================================
+
+usuarioH1 = UsuarioHerencia(
+    "Andrés",
+    "3001",
+    "Ingeniería"
+)
+
+usuarioH2 = UsuarioHerencia(
+    "Laura",
+    "3002",
+    "Medicina"
+)
+
+admin1 = Administrador(
+    "Carlos",
+    "4001",
+    "Coordinador"
+)
+
+# Mostrar información
+usuarioH1.mostrarUsuarioHerencia()
+usuarioH2.mostrarUsuarioHerencia()
+
+admin1.mostrarAdministrador()

@@ -1,0 +1,79 @@
+# ==========================================
+# MAIN FINAL DEL SISTEMA DE BIBLIOTECA
+# ==========================================
+
+from INTERFACES import LibroPrestado, Revista # type: ignore
+from biblioteca import Libro
+
+
+if __name__ == "__main__":
+
+    print("\n===================================")
+    print("📚 SISTEMA COMPLETO DE BIBLIOTECA")
+    print("===================================\n")
+
+    # ==========================================
+    # PARTE 1 - LIBROS
+    # ==========================================
+
+    libro1 = Libro("Cien años de soledad", "Gabriel García Márquez", 1967)
+    libro2 = Libro("Don Quijote", "Miguel de Cervantes", 1605)
+    libro3 = Libro("El Principito", "Antoine de Saint-Exupéry", 1943)
+
+    print("========== LIBROS ==========")
+    libro1.mostrarInformacion()
+    libro2.mostrarInformacion()
+    libro3.mostrarInformacion()
+
+    # ==========================================
+    # PARTE 6 - MATERIALES (ABSTRACCIÓN)
+    # ==========================================
+
+    material1 = LibroFisico("Harry Potter") # type: ignore
+    material2 = LibroDigital("Python para principiantes") # type: ignore
+
+    materiales = [material1, material2]
+
+    print("\n========== MATERIALES ==========")
+
+    for material in materiales:
+        material.tipoMaterial()
+
+    # ==========================================
+    # PARTE 7 - INTERFACES
+    # ==========================================
+
+    prestamo1 = LibroPrestado("Cien años de soledad")
+    prestamo2 = Revista("National Geographic")
+
+    prestables = [prestamo1, prestamo2]
+
+    print("\n========== SISTEMA DE PRÉSTAMOS ==========")
+
+    for objeto in prestables:
+        objeto.prestar()
+
+    # ==========================================
+    # PARTE 8 - PRÉSTAMO REAL CON EXCEPCIÓN
+    # ==========================================
+
+    libroPrestamo = LibroBiblioteca("El Principito") # type: ignore
+
+    print("\n========== CONTROL DE PRÉSTAMO ==========")
+
+    try:
+        libroPrestamo.prestarLibro()
+        libroPrestamo.prestarLibro()  # genera error
+
+    except LibroNoDisponibleException as error: # type: ignore
+        print("❌ Error:", error)
+
+    # devolver libro
+    libroPrestamo.devolverLibro()
+
+    # volver a prestar
+    libroPrestamo.prestarLibro()
+
+    print("\n===================================")
+    print("✅ SISTEMA EJECUTADO CORRECTAMENTE")
+    print("===================================")
