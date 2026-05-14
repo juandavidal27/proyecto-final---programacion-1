@@ -1,0 +1,80 @@
+SISTEMA DE BIBLIOTECA EN PYTHON
+📌 Título
+
+Desarrollo de un sistema de biblioteca utilizando programación orientada a objetos en Python
+
+📌 Introducción
+
+En este proyecto se desarrolló un sistema básico de biblioteca utilizando el lenguaje de programación Python, aplicando los principales conceptos de la programación orientada a objetos (POO), como clases, objetos, herencia, encapsulamiento, polimorfismo, abstracción, interfaces y manejo de excepciones.
+
+El objetivo principal fue simular el funcionamiento de una biblioteca real, donde se pueden gestionar libros, materiales, préstamos y devoluciones de forma estructurada y segura.
+
+📌 Objetivos
+Objetivo general
+
+Desarrollar un sistema de biblioteca en Python aplicando los principios fundamentales de la programación orientada a objetos.
+
+Objetivos específicos
+Crear clases para representar libros y materiales.
+Implementar herencia y polimorfismo.
+Aplicar clases abstractas e interfaces.
+Manejar errores mediante excepciones personalizadas.
+Simular préstamos y devoluciones de libros.
+📌 Desarrollo del proyecto
+
+El sistema fue construido en varias partes:
+
+🟢 Parte 1: Clase Libro
+
+Se creó la clase Libro, que contiene los atributos:
+
+Título
+Autor
+Año
+
+Además, incluye el método mostrarInformacion() para imprimir los datos del libro.
+
+🟢 Parte 2 y 3: Encapsulamiento y Herencia
+
+Se trabajó la estructura de clases para organizar mejor el código, preparando el sistema para reutilización de código mediante herencia.
+
+🟢 Parte 4: Clase Biblioteca
+
+Se implementó una clase que permite gestionar libros dentro de una biblioteca.
+
+🟢 Parte 5: Polimorfismo
+
+Se aplicó polimorfismo para permitir que diferentes objetos respondan de manera diferente al mismo método.
+
+🟢 Parte 6: Clases Abstractas
+
+Se creó la clase abstracta MaterialBiblioteca, que obliga a las clases hijas a implementar el método tipoMaterial().
+
+Esto permitió diferenciar entre:
+
+Libros físicos
+Libros digitales
+🟢 Parte 7: Interfaces
+
+Se implementó la interfaz Prestable, que obliga a implementar el método prestar() en diferentes tipos de materiales como libros y revistas.
+
+🟢 Parte 8: Excepciones personalizadas
+
+Se creó la excepción LibroNoDisponibleException para controlar errores cuando un libro ya está prestado.
+
+Esto permitió mejorar la seguridad del sistema y evitar acciones inválidas.
+
+📌 Main del sistema
+
+El programa principal integra todas las partes anteriores y permite:
+
+Mostrar libros
+Mostrar materiales
+Realizar préstamos
+Manejar errores
+Devolver libros
+📌 Conclusión
+
+Este proyecto permitió aplicar de manera práctica los conceptos fundamentales de la programación orientada a objetos en Python. Se logró construir un sistema funcional que simula una biblioteca real, incorporando estructuras avanzadas como abstracción, interfaces y manejo de excepciones.
+
+Además, se fortalecieron habilidades de diseño de software y organización de código.
